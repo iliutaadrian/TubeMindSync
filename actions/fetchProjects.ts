@@ -1,4 +1,3 @@
-import { Project } from "@/lib/db";
 import axios from "axios";
 
 export const fetchProjects = async () => {
@@ -6,9 +5,8 @@ export const fetchProjects = async () => {
   try {
     const { data } = await axios.get('/api/projects/read');
     console.log(data);
-    const projects: Project[] = data.projects as Project[];
     const details = data.details;
-    return { projects, details };
+    return {};
   } catch (error) {
     throw new Error('Failed to fetch projects');
   }

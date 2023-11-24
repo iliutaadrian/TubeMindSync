@@ -2,26 +2,20 @@
 
 import { Button } from "@/components/ui/button";
 import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage,
+    Form,
+    FormField,
+    FormItem,
+    FormLabel,
+    FormMessage
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { Copy } from "lucide-react";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { Prism as SyntaxHighlighter } from "react-syntax-highlighter";
-import { darcula } from "react-syntax-highlighter/dist/esm/styles/prism"; // You can choose different styles
+
 import { z } from "zod";
-import { Textarea } from "../ui/textarea";
-import { LanguageSelect } from "../language-select/language-select";
 const projectFormSchema = z.object({
   link: z
     .string()
@@ -118,13 +112,10 @@ export const YoutubeForm = () => {
         >
           Summarize
         </Button>
-        <SyntaxHighlighter
-          language="markdown"
-          style={darcula}
-          className="text-sm"
+        <p
         >
           {value}
-        </SyntaxHighlighter>
+        </p>
       </form>
     </Form>
   );

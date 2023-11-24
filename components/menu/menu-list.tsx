@@ -34,7 +34,7 @@ export const MenuList = () => {
           <LayoutDashboard />
           Dashboard
         </Link>
-        {projects.map((project) => {
+        {projects.map((project:any) => {
           return (
             <Link
               href={`/project/${project.id}`}
