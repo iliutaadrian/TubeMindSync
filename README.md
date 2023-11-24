@@ -1,3 +1,13 @@
+## Youtube to Second Brain
+Transform YouTube videos into actionable insights with 
+- AI-powered summaries,
+- key highlights,
+-  memorable quotes.
+
+  
+Effortlessly assimilate information and build your second brain on **Notion**. 
+Elevate your learning experience and save time while staying ahead with MindSync – where AI meets personalized knowledge curation!
+
 ## Technologies Used
 
 - Next.js: A React framework for building server-side rendered and static websites.
