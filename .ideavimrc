@@ -1,0 +1,30 @@
+let g:mapleader = ","
+set scrolloff=10
+set linenumber
+set showmode
+set showcmd
+set visualbell
+set clipboard+=unnamed
+set surround
+
+set ignorecase
+set smartcase
+set incsearch
+
+set which-key
+set notimeout
+set timeoutlen=5000
+
+set vim-commentary
+
+nnoremap <A-l> :tabnext<CR>
+nnoremap <A-h> :tabprev<CR>\
+
+vnoremap < <gv
+vnoremap > >gv
+
+nnoremap <C-d> <C-d>zz
+nnoremap <C-u> <C-u>zz
+
+nnoremap n nzzzv
+nnoremap N Nzzzv
