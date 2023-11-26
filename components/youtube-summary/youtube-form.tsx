@@ -2,20 +2,21 @@
 
 import { Button } from "@/components/ui/button";
 import {
-    Form,
-    FormField,
-    FormItem,
-    FormLabel,
-    FormMessage
+  Form,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { toast } from "@/components/ui/use-toast";
 import { zodResolver } from "@hookform/resolvers/zod";
 import axios from "axios";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
-
 import { z } from "zod";
+import Markdown from "react-markdown";
+
 const projectFormSchema = z.object({
   link: z
     .string()
@@ -34,12 +35,18 @@ const defaultValues: Partial<TranslateFormValues> = {
 
 export const YoutubeForm = () => {
   const [isLoading, setIsLoading] = useState(false);
-  const [value, setValue] = useState("");
+  const [value, setValue] = useState(localStorage.getItem("summary") || "");
+  const [isMounted, setMounted] = useState(false);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const form = useForm<TranslateFormValues>({
     resolver: zodResolver(projectFormSchema),
     defaultValues,
   });
+
+  if (!isMounted) return null;
 
   const onSubmit = async (data: TranslateFormValues) => {
     setIsLoading(true);
@@ -68,6 +75,7 @@ export const YoutubeForm = () => {
           summary += `${item.summary} `;
         });
         // window.location.href = `/chat/${data.data.chatId}`
+        localStorage.setItem("summary", summary);
         setValue(summary);
       });
     } catch (error) {
@@ -112,10 +120,9 @@ export const YoutubeForm = () => {
         >
           Summarize
         </Button>
-        <p
-        >
+        <Markdown>
           {value}
-        </p>
+        </Markdown>
       </form>
     </Form>
   );

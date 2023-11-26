@@ -18,6 +18,12 @@ export type UserClerk = {
 
 export const options = [
   {
+    name: "Main Concept Explanation",
+    key: "main-concept",
+    value:
+    "Main Concept Explanation:Break down the primary concept discussed in the video in a way that a 15-year-old can easily understand.",
+  },
+  {
     name: "Timeline Summary",
     key: "timeline-summary",
     value:
@@ -28,12 +34,6 @@ export const options = [
     key: "key-insights",
     value:
       "Key Insights:Present the main 6 insights from the video in a bullet-point format.",
-  },
-  {
-    name: "Main Concept Explanation",
-    key: "main-concept",
-    value:
-      "Main Concept Explanation:Break down the primary concept discussed in the video in a way that a 15-year-old can easily understand.",
   },
   {
     name: "Best Quotes",

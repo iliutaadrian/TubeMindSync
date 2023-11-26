@@ -54,7 +54,7 @@ export const openaiSummary = async (
     temperature: 1,
     max_tokens: 2000,
     prompt:
-      `Include emojis if possible. Analyze the video transcript provided below and do the operation mentioned below. The response should be in the markdown format with a heading 3 and a list of items. Only include the response text. ${option}
+      `Add bold and italics. Analyze the video transcript provided below and do the operation mentioned below. The response should be in the markdown format with a heading 2 and a list of items. Only include the response text. ${option}
       Video Transcript:${transcript}`,
   });
 
